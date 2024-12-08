@@ -2176,12 +2176,12 @@
 		list-style: disc;
 		margin: 0 0 2em 0;
 		padding-left: 1em;
-		font-size: 1.2em;  /* Augmenter la taille de la police des puces */
+		font-size: 1.em;  /* Augmenter la taille de la police des puces */
 	}
 
 	ul li {
 		padding-left: 0.5em;
-		color: #333;  /* Couleur du texte des éléments de la liste */
+		color: #777;  /* Couleur du texte des éléments de la liste */
 	}
 
 	ul.special {
