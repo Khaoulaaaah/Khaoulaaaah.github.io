@@ -1,0 +1,34 @@
+
+/* Split */
+
+	.split:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+
+	.split > * {
+		float: left;
+	}
+
+/* Spotlight */
+
+	.spotlight:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+
+	.spotlight .image {
+		float: left;
+	}
+
+	.spotlight .content {
+		float: left;
+	}
+
+/* Banner */
+
+	#banner {
+		background: hsl(239, 60%, 78%);
+	}
