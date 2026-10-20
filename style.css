@@ -1,43 +1,29 @@
 /* ==========================================================================
-   1. VARIABLES DE COULEUR ET THÈMES (BEIGE, MARRON, GRIS, BLANC, NOIR)
+   0. FONTS IMPORT
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;500;600;700&family=Sacramento&display=swap');
+
+/* ==========================================================================
+   1. VARIABLES DE COULEUR ET THÈMES
    ========================================================================== */
 
-/* Thème Sombre (par défaut) */
 :root {
-    --bg-color: #1a1816;              /* Noir/Gris très foncé */
-    --text-color: #f5f0e8;            /* Beige clair / Blanc cassé */
-    --text-secondary: #d1c7bd;      /* Beige grisé */
-    --header-bg: rgba(255, 255, 255, 0.05);
-    --header-border: rgba(210, 180, 150, 0.15);
-    --card-bg: #24211e;              /* Gris foncé chaud */
-    --card-border: #5c4a3e;          /* Marron moyen */
-    --footer-bg: #141211;            /* Noir profond */
-    --accent-primary: #d4a373;        /* Beige doré / Marron clair */
-    --accent-secondary: #8c5a3c;      /* Marron chaud */
-    --input-bg: rgba(255, 255, 255, 0.04);
-    --mobile-menu-bg: rgba(26, 24, 22, 0.98);
-    --scrollbar-track: #141211;
-    --circle-bg: #ffffff;             /* Cercle blanc/beige pour faire ressortir les logos */
-}
-
-/* Thème Clair (déclenché automatiquement par le navigateur) */
-@media (prefers-color-scheme: light) {
-    :root {
-        --bg-color: #f7f4ef;          /* Beige très doux */
-        --text-color: #211c19;        /* Noir/Marron très foncé */
-        --text-secondary: #594f47;    /* Gris/Marron moyen */
-        --header-bg: rgba(255, 255, 255, 0.75);
-        --header-border: rgba(92, 74, 62, 0.15);
-        --card-bg: #ffffff;           /* Blanc pur */
-        --card-border: #d4c5b9;       /* Beige/Gris doux */
-        --footer-bg: #eae3d9;         /* Beige grisé */
-        --accent-primary: #8c5a3c;     /* Marron chaud */
-        --accent-secondary: #5c4a3e;   /* Marron foncé */
-        --input-bg: rgba(0, 0, 0, 0.03);
-        --mobile-menu-bg: rgba(247, 244, 239, 0.98);
-        --scrollbar-track: #eae3d9;
-        --circle-bg: #f7f4ef;          /* Fond du cercle adapté */
-    }
+    --bg-color: #20212B;            /* Dark slate grey background */
+    --text-color: #f5f2eb;          /* Clean cream / off-white */
+    --text-secondary: #c3c8ce;     /* Muted grey-blue text */
+    --header-bg: rgba(255, 255, 255, 0.08);
+    --header-border: rgba(255, 255, 255, 0.12);
+    --card-bg: #28303a;
+    --card-border: #3a4552;
+    --footer-bg: #15191e;
+    --accent-primary: #f5f2eb;
+    --accent-secondary: #a0aab5;
+    --input-bg: rgba(255, 255, 255, 0.05);
+    --mobile-menu-bg: rgba(30, 36, 43, 0.98);
+    --scrollbar-track: #15191e;
+    --circle-bg: #ffffff;
+    --rappel : #a36566;
+    --circular-text : #73766A;
 }
 
 /* ==========================================================================
@@ -57,13 +43,13 @@
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
-    min-height: 200vh;
+    min-height: 100vh;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-    width: 12px;
+    width: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -71,12 +57,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(to bottom, var(--accent-primary), var(--accent-secondary));
+    background: var(--card-border);
     border-radius: 6px;
 }
 
 /* ==========================================================================
-   3. HEADER & NAVIGATION
+   3. HEADER & NAVIGATION (Preserved header styling)
    ========================================================================== */
 
 header {
@@ -87,14 +73,14 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 3rem;
+    gap: 4rem;
     background: var(--header-bg);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--header-border);
     border-radius: 50px;
     padding: 0.7rem 2rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
     z-index: 1000;
 }
 
@@ -104,17 +90,6 @@ header {
     font-weight: 600;
     white-space: nowrap;
     transition: transform 0.3s ease-in-out;
-}
-
-.logo span {
-    background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.logo:hover {
-    transform: scale(1.05);
 }
 
 .nav-links {
@@ -135,40 +110,6 @@ li a:hover {
     color: var(--text-color);
 }
 
-li a::before {
-    position: absolute;
-    content: '';
-    width: 0;
-    left: 0;
-    height: 3px;
-    bottom: -4px;
-    border-radius: 1rem;
-    transition: width 0.3s ease-in-out;
-    background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
-}
-
-li a:hover::before {
-    width: 100%;
-}
-
-.visit-btn {
-    padding: 0.6rem 1.4rem;
-    border-radius: 3rem;
-    border: none;
-    font-weight: 500;
-    font-size: 0.9rem;
-    color: #ffffff;
-    cursor: pointer;
-    white-space: nowrap;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-}
-
-.visit-btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(140, 90, 60, 0.4);
-}
-
 #menu-icon {
     font-size: 1.5rem;
     color: var(--text-color);
@@ -178,124 +119,239 @@ li a:hover::before {
     border: none;
 }
 
-
-
 /* ==========================================================================
-   4. SECTIONS & LAYOUT
+   4. SECTION ABOUT & COPY BUTTONS
    ========================================================================== */
 
 section {
     min-height: 100vh;
-    padding: 8rem 12%;
+    padding: 8rem 10%;
     width: 100%;
     position: relative;
 }
 
-.section-title {
-    text-align: center;
-    font-size: 4rem;
-    font-weight: 600;
-    margin-bottom: 3rem;
-}
-
-.btn-group {
-    display: flex;
-    gap: 1rem;
-}
-
-.btn {
-    border-radius: 3rem;
-    padding: 0.5rem 1.5rem;
-    border: 2px solid var(--accent-secondary);
-    color: var(--text-color);
-    cursor: pointer;
-    font-weight: 500;
-    white-space: nowrap;
-    transition: 0.3s ease-in-out;
-}
-
-.btn:hover {
-    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-    box-shadow: 0 0 15px rgba(140, 90, 60, 0.4);
-    border-color: transparent;
-    color: #ffffff;
-    transform: translateY(-2px);
-}
-
-/* --- Section About --- */
 .about {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.about .about-container {
+.about-container {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 10rem;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    gap: 4rem;
 }
 
-.about-description {
-    font-size: 1.05rem;
-    color: var(--text-secondary);
-    line-height: 1.6;
-    max-width: 580px;
-    margin: 0.5rem 0 1rem 0;
-    text-align: center;
-}
-
-.about img {
-    width: 30vw;
-    border-radius: 50%;
-    border: 3px solid var(--accent-secondary);
-}
-
+/* Left Info Box */
 .info-box {
     display: flex;
     flex-direction: column;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    gap: 1.5rem;
+    text-align: left;
+    align-items: flex-start;
+    max-width: 620px;
 }
 
-.info-box h3 {
-    font-size: 1.8rem;
+.info-box .text {
+    display: flex;
+    flex-direction: column;
+}
+
+/* "KHAOULA" in Anton */
+.info-box .text h1.first-name {
+    font-family: 'Anton', sans-serif;
+    font-size: 7rem;
+    font-weight: 400;
+    line-height: 0.8;
+    letter-spacing: 3px;
+    color: var(--text-color);
+    text-transform: uppercase;
+}
+
+/* "soumane" in Sacramento */
+.info-box .text h1.last-name {
+    font-family: 'Sacramento', cursive;
+    font-size: 7rem;
+    font-weight: 400;
+    line-height: 0.8;
+    color: var(--rappel);
+    text-transform: capitalize;
+    margin-top: -0.5rem;
+}
+
+.about-description {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 1.5rem 0;
+    text-align: left;
+    max-width: 540px;
+}
+
+.info-box .text .sub-title {
+    font-size: 1.1rem;
     font-weight: 500;
     color: var(--text-secondary);
+    letter-spacing: 1px;
+    margin-top: 0.5rem;
+    display: block;
 }
 
-.info-box h1 {
-    font-size: 4rem;
-    font-weight: 600;
-}
-
-.info-box span {
-    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    font-size: 2rem;
-}
-
-.socials {
+/* Button Group */
+/* Button Group Container */
+.btn-group {
     display: flex;
-    gap: 2rem;
+    flex-wrap: nowrap;          /* Keeps all buttons on the same line */
+    gap: 1rem;
+    align-items: center;
+    width: 100%;
+    max-width: 580px;           /* Prevents pushing into the image frame */
+    overflow: visible;
 }
 
-.socials i,
-.socials a {
-    font-size: 2.5rem;
+/* Social Interactive Copy Buttons */
+.btn-copy {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    background-color: transparent;
     color: var(--text-color);
+    border: 1px solid var(--header-border);
+    border-radius: 50px;
+    padding: 0.75rem 1.4rem;
+    font-size: 0.9rem;
+    font-weight: 500;
     cursor: pointer;
-    transition: 0.2s ease-in-out;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+    white-space: nowrap;        /* Prevents text inside the button from breaking into 2 lines */
+    flex-shrink: 0;             /* Retains proper button proportions */
 }
 
-.socials i:hover,
-.socials a:hover {
-    transform: scale(1.1);
-    color: var(--accent-primary);
+.btn-copy i {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+.btn-copy:hover {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    border-color: var(--text-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-copy:hover i {
+    color: var(--bg-color);
+}
+
+/* Allow natural wrapping on smaller/tablet screens */
+@media (max-width: 992px) {
+    .btn-group {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* Circular Image Wrapper with SVG */
+.about-img-wrapper {
+    flex-shrink: 0;
+    width: 510px;
+    height: 510px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circular-text-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+/* Style for the curved text */
+.curved-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    fill: var(--circular-text);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* Responsive adjustment */
+@media (max-width: 992px) {
+    .about-img-wrapper {
+        width: 320px;
+        height: 320px;
+    }
+}
+
+/* ==========================================================================
+   5. RESPONSIVE DESIGN
+   ========================================================================== */
+
+@media (max-width: 992px) {
+    .about-container {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 3rem;
+    }
+
+    .info-box {
+        align-items: center;
+        text-align: center;
+    }
+
+    .about-description {
+        text-align: center;
+    }
+
+    .info-box .text h1.first-name {
+        font-size: 3.8rem;
+    }
+
+    .info-box .text h1.last-name {
+        font-size: 4rem;
+    }
+
+    .about img {
+        width: 280px;
+        height: 280px;
+    }
+
+    .btn-group {
+        justify-content: center;
+    }
+}
+/* Responsive Scaling */
+@media (max-width: 992px) {
+    .about-container {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 3rem;
+    }
+
+    .info-box {
+        align-items: center;
+        text-align: center;
+    }
+
+    .about-description {
+        text-align: center;
+    }
+
+    .info-box .text h1 {
+        font-size: 3.5rem;
+    }
+
+    .about img {
+        width: 280px;
+        height: 280px;
+    }
 }
 
 /* --- Section Experience --- */

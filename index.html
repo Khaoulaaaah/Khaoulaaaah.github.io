@@ -14,45 +14,85 @@
 <body>
 
     <header class="header">
-        <a href="#" class="logo">Khaoula <span>SOUMANE</span></a>
-
         <ul class="nav-links" id="primary-navigation">
             <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-
-        <a class="visit-btn" href="https://github.com/" target="_blank" rel="noopener noreferrer">Visit GitHub</a>
-        <button class="menu-toggle" id="menu-icon" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
     </header>
 
 
     <section id="about" class="about">
         <div class="about-container">
-            <img src="Images/image.jpg" alt="Khaoula SOUMANE Profile Picture">
 
             <div class="info-box">
-
                 <div class="text">
-                    <h1>Khaoula SOUMANE</h1>
-                    <span>Data Engineer - Analyst</span>
+                    <h1 class="first-name">KHAOULA</h1>
+                    <h1 class="last-name">Soumane</h1>
+                    <span class="sub-title">Data Science | Data Engineering | Data Analytics</span>
                 </div>
 
                 <p class="about-description">
-                    Engineering graduate in Data Science and Data Engineering, with a generalist profile across data engineering, data science, and AI. Through my professional experience and academic projects, I have worked on data pipelines, cloud platforms, machine learning models, and AI applications. I enjoy exploring different areas of data, learning new technologies, and finding practical ways to turn data into useful solutions.
+                   Computer Science graduate passionate about the data universe, with expertise across Data Engineering, Science, and Analytics.
                 </p>
 
                 <div class="btn-group">
-                    <a href="khaoula_soumane_resume.pdf" class="btn" download>Download CV</a>
-                    <a href="#contact" class="btn">Contact</a>
-                </div>
+                    <!-- Email Copy Button -->
+                    <button class="btn btn-copy" 
+                            data-label="Gmail" 
+                            data-default-value="soumane.khaoula.career@gmail.com" 
+                            data-copy-value="soumane.khaoula.career@gmail.com" 
+                            aria-label="Copy Email">
+                        <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                        <span class="btn-label">Gmail</span>
+                    </button>
 
-                <div class="socials" aria-label="Social links">
-                    <a href="https://github.com/Khaoulaaaah" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
-                    <a href="https://www.linkedin.com/in/khaoula-soumane/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
-                </div>
+                    <!-- GitHub Copy Button -->
+                    <button class="btn btn-copy" 
+                            data-label="GitHub" 
+                            data-default-value="Khaoulaaaah" 
+                            data-copy-value="https://github.com/Khaoulaaaah" 
+                            aria-label="Copy GitHub Username">
+                        <i class="fa-brands fa-github" aria-hidden="true"></i>
+                        <span class="btn-label">GitHub</span>
+                    </button>
 
+                    <!-- LinkedIn Copy Button -->
+                    <button class="btn btn-copy" 
+                            data-label="LinkedIn" 
+                            data-default-value="Khaoula Soumane" 
+                            data-copy-value="https://www.linkedin.com/in/khaoula-soumane/" 
+                            aria-label="Copy LinkedIn Username">
+                        <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+                        <span class="btn-label">LinkedIn</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="about-img-wrapper">
+                <svg viewBox="0 0 420 420" class="circular-text-svg">
+                    <defs>
+                        <!-- Circular path defining the arc around the bottom of the image -->
+                        <path id="text-arc" d="M 60,220 A 150,150 0 0,0 360,210" />
+
+                        <!-- Circular clip-path to crop your image into a perfect circle -->
+                        <clipPath id="circle-clip">
+                            <circle cx="210" cy="210" r="140" />
+                        </clipPath>
+                    </defs>
+
+                    <!-- Profile Picture inside the clip-path -->
+                    <image href="Images/image.jpg" x="70" y="70" width="280" height="280" clip-path="url(#circle-clip)" preserveAspectRatio="xMidYMid slice" />
+
+                    <!-- Curved Text centered at the bottom -->
+                    <text class="curved-text">
+                        <textPath href="#text-arc" startOffset="50%" text-anchor="middle">
+                            Seeking full-time position
+                        </textPath>
+                    </text>
+                </svg>
             </div>
 
         </div>
