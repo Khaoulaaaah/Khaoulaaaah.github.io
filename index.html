@@ -144,54 +144,100 @@
     </section>
 
     <section id="experience" class="experience">
+            <div class="experience-watermark">EXPERIENCE</div>
             <h2 class="section-title">Experience</h2>
 
             <div class="experience-info">
-                <div class="grid">
-
-                    <!-- Air France-KLM -->
-                    <div class="grid-card">
-                        <div class="logo-circle">
-                            <img src="Images/airfrance-logo.png" alt="Air France-KLM Logo">
-                        </div>
-                        <span>Data Engineering Intern</span>
-                        <h3>Air France-KLM</h3>
-                        <p>Built ELT pipelines on GCP, developed Power BI and Dynatrace monitoring dashboards to track cloud costs and system health, and implemented a machine learning-based anomaly detection solution. </p>
+                <!-- Air France-KLM -->
+                <div class="exp-row">
+                    <div class="exp-logo-circle">
+                        <img src="Images/airfrance-logo.png" alt="Air France-KLM Logo">
                     </div>
-
-                    <!-- Nsayblik -->
-                    <div class="grid-card">
-                        <div class="logo-circle">
-                            <img src="Images/nsayblik-logo.png" alt="Nsayblik Logo">
+                    <div class="exp-details">
+                        <div class="exp-header">
+                            <div class="exp-title-group">
+                                <h3>Air France-KLM</h3>
+                                <span class="exp-role">Data Engineering</span>
+                            </div>
+                            <span class="exp-date">March - September 2026</span>
                         </div>
-                        <span>Data & MLOps Intern</span>
-                        <h3>Nsayblik</h3>
-                        <p>Created automated document extraction pipelines using PyTesseract OCR, trained profile classification models, and deployed end-to-end MLOps workflows using Docker, Django, and automated CI/CD pipelines.</p>
-                    </div>
-
-                    <!-- IRIT Toulouse -->
-                    <div class="grid-card">
-                        <div class="logo-circle">
-                            <img src="Images/irit-logo.png" alt="IRIT Toulouse Logo">
+                        <p class="exp-mission">Built ELT pipelines on GCP, developed Power BI and Dynatrace monitoring dashboards to track cloud costs and system health, and implemented a machine learning-based anomaly detection solution.</p>
+                        <div class="exp-tech-stack">
+                            <span class="tech-tag">GCP</span>
+                            <span class="tech-tag">Power BI</span>
+                            <span class="tech-tag">Dynatrace</span>
+                            <span class="tech-tag">Machine Learning</span>
                         </div>
-                        <span>Web & Medical AI Intern</span>
-                        <h3>IRIT Toulouse</h3>
-                        <p>Designed a modular web platform using FastAPI and React to process brain MRI and MRSI spectroscopy data, integrating 3D spatial filtering and automated metabolite concentration heatmaps for medical researchers.</p>
                     </div>
+                </div>
 
+                 <!-- IRIT Toulouse -->
+                <div class="exp-row">
+                    <div class="exp-logo-circle">
+                        <img src="Images/irit-logo.png" alt="IRIT Toulouse Logo">
+                    </div>
+                    <div class="exp-details">
+                        <div class="exp-header">
+                            <div class="exp-title-group">
+                                <h3>IRIT Toulouse</h3>
+                                <span class="exp-role">Software Engineering</span>
+                            </div>
+                            <span class="exp-date">November 2025 - March 2026</span>
+                        </div>
+                        <p class="exp-mission">Designed a modular web platform using FastAPI and React to process brain MRI and MRSI spectroscopy data, integrating 3D spatial filtering and automated metabolite concentration heatmaps for medical researchers.</p>
+                        <div class="exp-tech-stack">
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">MRI/MRSI Data</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nsayblik -->
+                <div class="exp-row">
+                    <div class="exp-logo-circle">
+                        <img src="Images/nsayblik-logo.png" alt="Nsayblik Logo">
+                    </div>
+                    <div class="exp-details">
+                        <div class="exp-header">
+                            <div class="exp-title-group">
+                                <h3>Nsayblik</h3>
+                                <span class="exp-role">Data & MLOps Engineering</span>
+                            </div>
+                            <span class="exp-date">July - September 2025</span>
+                        </div>
+                        <p class="exp-mission">Created automated document extraction pipelines using PyTesseract OCR, trained profile classification models, and deployed end-to-end MLOps workflows using Docker, Django, and automated CI/CD pipelines.</p>
+                        <div class="exp-tech-stack">
+                            <span class="tech-tag">PyTesseract OCR</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">Django</span>
+                            <span class="tech-tag">CI/CD</span>
+                            <span class="tech-tag">GitHub Actions</span>
+                            <span class="tech-tag">Nginx</span>
+                            <span class="tech-tag">Gunicorn</span>
+                            <span class="tech-tag">XGBoost</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-    <section id="projects" class="projects">
-        <h2 class="section-title">Personal and Academic Projects</h2>
+<section id="projects" class="projects">
+    <div class="projects-watermark">SIDEPROJECTS</div>
+    <h2 class="section-title">Side Projects</h2>
 
+    <!-- Add the wrapper and buttons here -->
+    <div class="carousel-wrapper">
+        <button class="carousel-nav prev-btn" aria-label="Previous Project">&#10094;</button>
+        
         <div class="projects-grid">
-
-
             <!-- Projet 1 -->
             <div class="project-card">
                 <h3>Adaptive Tutoring Agent</h3>
+                <span class="project-domain">AI Agents</span>
                 <p>Developed an AI-powered personal tutoring agent combining RAG and RLHF using LangChain, Ollama, and Qdrant/FAISS and deployed on Streamlit to provide personalized learning support for students.</p>
                 <div class="btn-group">
                     <a href="https://github.com/Khaoulaaaah/AdapLearAgents" class="btn" target="_blank" rel="noopener noreferrer">Github Repo</a>
@@ -200,22 +246,25 @@
 
             <!-- Projet 2 -->
             <div class="project-card">
-                <h3>Parallel Computing using Hadoop</h3>
-                <p>Deployed a Hadoop cluster (HDFS, YARN) and developed Java MapReduce jobs for large-scale distributed data processing..</p>
-
+                <h3>End-to-End Real-Time Weather App</h3>
+                <span class="project-domain">Data Engineering</span>
+                <p>Designed an data pipeline to collect weather data from a Weather API, orchestrated with Apache Airflow and containerized using Docker. Raw JSON data is ingested into Apache Kafka, transformed using PySpark, and stored in a PostgreSQL database. An interactive Power BI dashboard provides near-real-time visualization of the data.</p>
             </div>
 
-            <!-- Projet 4 -->
+            <!-- Projet 3 -->
             <div class="project-card">
                 <h3>Yoga Teacher</h3>
-                <p>Developped an Assistant that detects and corrects yoga poses in real time using computer vision: open cv and mediapipe and hosted on Streamlit .</p>
+                <span class="project-domain">Computer Vision</span>
+                <p>Developed a real-time yoga pose detection and correction assistant using computer vision with OpenCV and MediaPipe, providing instant feedback on posture and pose alignment through an interactive Streamlit application.</p>
                 <div class="btn-group">
                     <a href="https://github.com/Khaoulaaaah/YogaPoseCorrection" class="btn" target="_blank" rel="noopener noreferrer">Github Repo</a>
                 </div>
             </div>
-
         </div>
-    </section>
+
+        <button class="carousel-nav next-btn" aria-label="Next Project">&#10095;</button>
+    </div>
+</section>
 
 
     <section id="contact" class="contact">
@@ -236,7 +285,7 @@
                 </button>
 
                 <!-- Direct Mailto Link (Optional alternative action) -->
-                <a href="mailto:soumane.khaoula.career@gmail.com" class="btn btn-contact-direct">
+                <a href="mailto:soumane.khaoula.career@gmail.com" class="btn btn-contact-direct" target="_blank" rel="noopener noreferrer">
                     <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
                     Send Email
                 </a>

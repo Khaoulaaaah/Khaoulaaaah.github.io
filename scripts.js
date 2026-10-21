@@ -1,4 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
+    
+    // ==========================================================================
+    // 1. SOCIAL COPY BUTTONS
+    // ==========================================================================
     const copyButtons = document.querySelectorAll('.btn-copy');
 
     copyButtons.forEach(button => {
@@ -25,15 +29,17 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', () => {
             navigator.clipboard.writeText(copyValue).then(() => {
                 labelSpan.innerText = 'Copied!';
+                button.classList.add('copied');
                 setTimeout(() => {
                     labelSpan.innerText = button.matches(':hover') ? hoverValue : defaultLabel;
                 }, 1800);
             });
         });
     });
-});
 
-document.addEventListener('DOMContentLoaded', () => {
+    // ==========================================================================
+    // 2. CONTACT COPY BUTTON
+    // ==========================================================================
     const contactCopyBtn = document.querySelector('.btn-contact-copy');
 
     if (contactCopyBtn) {
@@ -52,5 +58,63 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, 2000);
             });
         });
+    }
+
+    // ==========================================================================
+    // 3. 3D INFINITE LOOP CAROUSEL & ARROW NAVIGATION
+    // ==========================================================================
+    const cards = document.querySelectorAll('.project-card');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+
+    if (cards.length > 0) {
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            // Remove states from all cards
+            cards.forEach(card => {
+                card.classList.remove('active', 'prev', 'next');
+            });
+
+            // Calculate the infinite loop indices
+            const prevIndex = (currentIndex - 1 + cards.length) % cards.length;
+            const nextIndex = (currentIndex + 1) % cards.length;
+
+            // Apply new states
+            cards[currentIndex].classList.add('active');
+            
+            if (cards.length >= 2) {
+                cards[prevIndex].classList.add('prev');
+                cards[nextIndex].classList.add('next');
+            }
+        }
+
+        // Arrow Button Functionality
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % cards.length;
+                updateCarousel();
+            });
+        }
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+                updateCarousel();
+            });
+        }
+
+        // Optional: Allow clicking the side cards to bring them to the center
+        cards.forEach((card, index) => {
+            card.addEventListener('click', () => {
+                if (card.classList.contains('prev') || card.classList.contains('next')) {
+                    currentIndex = index;
+                    updateCarousel();
+                }
+            });
+        });
+
+        // Initialize the first view
+        updateCarousel();
     }
 });
