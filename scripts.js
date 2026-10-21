@@ -32,3 +32,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const contactCopyBtn = document.querySelector('.btn-contact-copy');
+
+    if (contactCopyBtn) {
+        const labelSpan = contactCopyBtn.querySelector('.btn-label');
+        const defaultText = labelSpan.innerText;
+        const emailToCopy = contactCopyBtn.getAttribute('data-copy-value');
+
+        contactCopyBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText(emailToCopy).then(() => {
+                labelSpan.innerText = 'Email Copied!';
+                contactCopyBtn.classList.add('copied');
+
+                setTimeout(() => {
+                    labelSpan.innerText = defaultText;
+                    contactCopyBtn.classList.remove('copied');
+                }, 2000);
+            });
+        });
+    }
+});

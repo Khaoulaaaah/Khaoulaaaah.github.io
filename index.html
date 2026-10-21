@@ -98,6 +98,51 @@
         </div>
     </section>
 
+
+    <section id="education" class="education">
+        <!-- Watermark Background Text -->
+        <div class="watermark-title" aria-hidden="true">EDUCATION</div>
+
+        <!-- Section Main Title -->
+        <h2 class="section-title">EDUCATION</h2>
+
+        <div class="education-container">
+
+            <!-- Education Item 1: INPT (Card Left, Logo Right) -->
+            <div class="edu-item edu-left">
+                <div class="edu-card">
+                    <h3 class="edu-degree">Engineering Degree in Computer Science</h3>
+                    <span class="edu-school">National Institute of Posts and Telecommunications (INPT)</span>
+                    <span class="edu-date">Major in Data Engineering &amp; Data Science — 2026</span>
+                    <ul class="edu-bullets">
+                        <li><strong>Core Competencies:</strong> Data Engineering, Data Science, Artificial Intelligence, Big Data Architectures.</li>
+                        <li><strong>Supporting Foundations:</strong> Advanced Mathematics, Software Engineering, Database Systems, Cloud Computing.</li>
+                    </ul>
+                </div>
+                <div class="edu-logo-wrapper">
+                    <img src="Images/inpt-logo.png" alt="INPT Logo" class="edu-logo">
+                </div>
+            </div>
+
+            <!-- Education Item 2: ENSEEIHT (Logo Left, Card Right) -->
+            <div class="edu-item edu-right">
+                <div class="edu-logo-wrapper">
+                    <img src="Images/enseeiht-logo.png" alt="ENSEEIHT Logo" class="edu-logo">
+                </div>
+                <div class="edu-card">
+                    <h3 class="edu-degree">Masters of Research in Computer Science</h3>
+                    <span class="edu-school">ENSEEIHT - Toulouse INP</span>
+                    <span class="edu-date">Speciality in High Performance Computing &amp; Big Data — 2026</span>
+                    <ul class="edu-bullets">
+                        <li><strong>Core Competencies:</strong> High Performance Computing (HPC), Distributed Systems, Parallel Programming, Big Data Processing.</li>
+                        <li><strong>Supporting Foundations:</strong> Parallel Algorithms, Performance Optimization, Grid &amp; Cloud Architectures.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
     <section id="experience" class="experience">
             <h2 class="section-title">Experience</h2>
 
@@ -172,13 +217,30 @@
         </div>
     </section>
 
-    <!-- Section Contact -->
-    <section class="contact" id="contact">
-        <div class="input-box">
-            <h2 class="section-title">Contact Me</h2>
 
-            <p class="contact-copy">Have a role or project in mind? Feel free to get in touch.</p>
-            <a class="btn" href="mailto:soumane.khaoula.career@gmail.com">Email me</a>
+    <section id="contact" class="contact">
+        <div class="contact-container">
+            <h2 class="section-title">GET IN TOUCH</h2>
+            
+            <p class="contact-description">
+                I’m always open to discussing new opportunities, data engineering &amp; AI projects, or potential collaborations. Feel free to reach out directly!
+            </p>
+
+            <div class="contact-actions">
+                <!-- Mail Me Copy Button -->
+                <button class="btn btn-contact-copy" 
+                        data-copy-value="soumane.khaoula.career@gmail.com" 
+                        aria-label="Copy Email Address">
+                    <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                    <span class="btn-label">Mail Me</span>
+                </button>
+
+                <!-- Direct Mailto Link (Optional alternative action) -->
+                <a href="mailto:soumane.khaoula.career@gmail.com" class="btn btn-contact-direct">
+                    <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+                    Send Email
+                </a>
+            </div>
         </div>
     </section>
 
@@ -186,6 +248,7 @@
     <footer>
         <ul>
             <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>

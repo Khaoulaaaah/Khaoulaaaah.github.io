@@ -13,7 +13,7 @@
     --text-secondary: #c3c8ce;     /* Muted grey-blue text */
     --header-bg: rgba(255, 255, 255, 0.08);
     --header-border: rgba(255, 255, 255, 0.12);
-    --card-bg: #28303a;
+    --card-bg: #73766A;
     --card-border: #3a4552;
     --footer-bg: #15191e;
     --accent-primary: #f5f2eb;
@@ -22,7 +22,7 @@
     --mobile-menu-bg: rgba(30, 36, 43, 0.98);
     --scrollbar-track: #15191e;
     --circle-bg: #ffffff;
-    --rappel : #a36566;
+    --rappel : #10389d;
     --circular-text : #73766A;
 }
 
@@ -289,7 +289,186 @@ section {
         height: 320px;
     }
 }
+/* ==========================================================================
+   EDUCATION SECTION STYLES
+   ========================================================================== */
+.education {
+    position: relative;
+    padding: 6rem 10% 6rem 12%; /* Extra padding on the left to leave room for the title */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
 
+/* Vertical Watermark Background Title */
+.watermark-title {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%) rotate(180deg);
+    writing-mode: vertical-rl;
+    font-family: 'Anton', sans-serif;
+    font-size: 9rem;
+    color: rgba(255, 255, 255, 0.025);
+    letter-spacing: 12px;
+    text-transform: uppercase;
+    pointer-events: none;
+    user-select: none;
+    white-space: nowrap;
+    z-index: 1;
+}
+
+/* Vertical Foreground Section Title */
+.education .section-title {
+    position: absolute;
+    left: 3rem;
+    top: 50%;
+    transform: translateY(-50%);
+    writing-mode: vertical-rl;      /* Rotates text vertically */
+    text-orientation: mixed;
+    transform: translateY(-50%) rotate(180deg); /* Flips text so it reads comfortably from top to bottom */
+    font-family: 'Anton', sans-serif;
+    font-size: 3.5rem;
+    letter-spacing: 6px;
+    color: var(--text-color);
+    text-transform: uppercase;
+    z-index: 2;
+    margin: 0;
+}
+
+/* Education Layout Container */
+.education-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    width: 100%;
+    max-width: 1000px;
+}
+
+/* Education Rows */
+.edu-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3.5rem;
+    width: 100%;
+}
+
+.edu-left {
+    flex-direction: row;
+}
+
+.edu-right {
+    flex-direction: row;
+}
+
+/* Education Cards */
+.edu-card {
+    flex: 1;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 50px;
+    padding: 2rem 2.5rem;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.edu-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--text-secondary);
+}
+
+.edu-degree {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 0.3rem;
+}
+
+.edu-school {
+    display: block;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 0.2rem;
+}
+
+.edu-date {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--accent-secondary);
+    margin-bottom: 1.2rem;
+}
+
+.edu-bullets {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding-left: 1.2rem;
+}
+
+.edu-bullets li {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    list-style-type: disc;
+}
+
+.edu-bullets li strong {
+    color: var(--text-color);
+}
+
+/* Circular Logo Wrappers */
+.edu-logo-wrapper {
+    flex-shrink: 0;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: 2px solid var(--card-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.2rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease;
+}
+
+.edu-logo-wrapper:hover {
+    transform: scale(1.05);
+}
+
+.edu-logo {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+/* Responsive adjustment for tablet/mobile: resets title back to top horizontal */
+@media (max-width: 992px) {
+    .education {
+        padding: 6rem 8%;
+    }
+
+    .education .section-title {
+        position: relative;
+        left: auto;
+        top: auto;
+        writing-mode: horizontal-tb;
+        transform: none;
+        font-size: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    .watermark-title {
+        display: none; /* Hide background watermark on smaller screens for clean layout */
+    }
+}
 /* ==========================================================================
    5. RESPONSIVE DESIGN
    ========================================================================== */
@@ -522,44 +701,113 @@ section {
 }
 
 /* --- Section Contact --- */
+/* ==========================================================================
+   CONTACT SECTION STYLES
+   ========================================================================== */
+
 .contact {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 8rem 10%;
+    text-align: center;
 }
 
-.input-box {
+.contact-container {
+    max-width: 680px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
-    width: 100%;
-    max-width: 600px;
+    gap: 1.8rem;
 }
 
-.input-box input {
-    width: 100%;
-    border-radius: 3rem;
-    border: 2px solid var(--card-border);
-    padding: 1.2rem 2rem 1.2rem 4rem;
-    font-size: 1.2rem;
-    background-color: var(--input-bg);
+.contact .section-title {
+    font-family: 'Anton', sans-serif;
+    font-size: 3.5rem;
+    letter-spacing: 4px;
     color: var(--text-color);
-    outline: none;
-    transition: 0.3s ease-in-out;
+    text-transform: uppercase;
 }
 
-.input-box input:focus {
-    border-color: var(--accent-primary);
-    box-shadow: 0 0 15px rgba(140, 90, 60, 0.3);
-}
-
-.input-box input::placeholder {
+.contact-description {
     font-size: 1.1rem;
     color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 580px;
 }
 
+.contact-actions {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Primary Mail Me Copy Button */
+.btn-contact-copy {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    border: 1px solid var(--text-color);
+    border-radius: 50px;
+    padding: 0.85rem 2.2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-contact-copy i {
+    font-size: 1.1rem;
+    color: var(--bg-color);
+}
+
+.btn-contact-copy:hover {
+    background-color: transparent;
+    color: var(--text-color);
+    transform: translateY(-2px);
+}
+
+.btn-contact-copy:hover i {
+    color: var(--text-color);
+}
+
+/* Copied Active Feedback State */
+.btn-contact-copy.copied {
+    background-color: #2e7d32;
+    border-color: #2e7d32;
+    color: #ffffff;
+}
+
+.btn-contact-copy.copied i {
+    color: #ffffff;
+}
+
+/* Secondary Direct Email Button */
+.btn-contact-direct {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    background-color: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--header-border);
+    border-radius: 50px;
+    padding: 0.85rem 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-contact-direct:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: var(--text-color);
+    transform: translateY(-2px);
+}
 /* ==========================================================================
    5. FOOTER
    ========================================================================== */
