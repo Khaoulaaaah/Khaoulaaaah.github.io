@@ -117,4 +117,67 @@ document.addEventListener('DOMContentLoaded', () => {
         // Initialize the first view
         updateCarousel();
     }
+    // ==========================================================================
+    // 4. MOBILE MENU TOGGLE
+    // ==========================================================================
+    const menuIcon = document.getElementById('menu-icon');
+    const navLinks = document.getElementById('primary-navigation');
+
+    if (menuIcon && navLinks) {
+        menuIcon.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = menuIcon.querySelector('i');
+            
+            // Swap between hamburger and close icon
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close menu when a link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuIcon.querySelector('i').classList.remove('fa-xmark');
+                menuIcon.querySelector('i').classList.add('fa-bars');
+            });
+        });
+    }
+
+    // ==========================================================================
+    // 5. ADD TOUCH SWIPE TO CAROUSEL
+    // ==========================================================================
+    const carouselWrapper = document.querySelector('.carousel-wrapper');
+    
+    if (carouselWrapper && cards.length > 0) {
+        let startX = 0;
+        let endX = 0;
+
+        carouselWrapper.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        }, { passive: true });
+
+        carouselWrapper.addEventListener('touchmove', (e) => {
+            endX = e.touches[0].clientX;
+        }, { passive: true });
+
+        carouselWrapper.addEventListener('touchend', () => {
+            const threshold = 50; // Minimum pixel distance for a swipe
+            
+            if (startX - endX > threshold) {
+                // Swiped Left -> Go to Next Card
+                currentIndex = (currentIndex + 1) % cards.length;
+                updateCarousel();
+            } else if (endX - startX > threshold) {
+                // Swiped Right -> Go to Previous Card
+                currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+                updateCarousel();
+            }
+        });
+    }
 });
+
