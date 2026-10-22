@@ -324,8 +324,6 @@ section {
 
 /* --- Layout & Cards --- */
 .education-container {
-    position: relative;
-    z-index: 2;
     display: flex;
     flex-direction: column;
     gap: 4rem;
@@ -949,7 +947,18 @@ section {
 }
 
 /* ==========================================================================
-   9. FOOTER
+   9. Common criteria 
+   ========================================================================== */
+/* Ensure all main content containers sit above the overlapping section titles */
+.education-container,
+.experience-info,
+.carousel-wrapper {
+    position: relative;
+    z-index: 3;
+}
+
+/* ==========================================================================
+   10. FOOTER
    ========================================================================== */
 footer {
     width: 100%;
@@ -1003,6 +1012,8 @@ footer ul li a:hover {
     }
 
     .experience-info {
+        position: relative; /* Enables z-index */
+        z-index: 3;
         flex-direction: column;
     }
 
@@ -1048,7 +1059,15 @@ footer ul li a:hover {
     }
 
     .watermark-title, .experience-watermark {
-        display: none; /* Hides background watermarks */
+        display: block;
+        writing-mode: horizontal-tb; /* Changes text from vertical to horizontal */
+        transform: translateX(-50%); /* Centers the watermark */
+        left: 50%;
+        right: auto;                 /* Resets the right alignment from the desktop Experience section */
+        top: 5rem;                   /* Positions it vertically right behind the main title */
+        font-size: 4rem;             /* Shrinks the font to fit smaller screens */
+        letter-spacing: 6px;
+        white-space: nowrap;
     }
 
     .education .section-title, .experience .section-title {
@@ -1211,5 +1230,37 @@ footer ul li a:hover {
     /* Hide carousel buttons, rely on touch */
     .carousel-nav {
         display: none;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        /* Invert Background & Text */
+        --bg-color: #f5f2eb;          
+        --text-color: #20212B;        
+        --text-secondary: #5a6069;    
+
+        /* Invert UI Elements */
+        --header-bg: rgba(0, 0, 0, 0.05);
+        --header-border: rgba(0, 0, 0, 0.1);
+        --card-bg: #ffffff;
+        --card-border: #d1d5db;
+        --footer-bg: #e6e3dc;
+        --input-bg: rgba(0, 0, 0, 0.05);
+        --mobile-menu-bg: rgba(245, 242, 235, 0.98);
+        --scrollbar-track: #e6e3dc;
+        --circle-bg: #ffffff;
+
+        /* Adjust Accents for contrast */
+        --accent-primary: #20212B;
+        --accent-secondary: #626B91;
+        /* --rappel: #644e4f; remains the same */
+    }
+
+    /* Override the hardcoded white watermarks so they are visible on a light background */
+    .watermark-title, 
+    .experience-watermark, 
+    .projects-watermark {
+        color: rgba(0, 0, 0, 0.04) !important;
     }
 }
